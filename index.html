@@ -3,11 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>Custom Elements</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto+Condensed&display=swap" rel="stylesheet">
   </script>
 </head>
 <body>
-  Hello
-  <info-card description="This is some description"></info-card>
+  <div style="display: flex; flex-direction: row; align-items: center; height: 100vh;"> 
+  <div style="display: flex; flex-direction: column; align-items: center; width: 100vw;">
+    <info-card
+      image="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?cs=srgb&dl=altitude-clouds-cold-933054.jpg"
+      title="Card Title"
+      subtitle="Card Subtitle"
+      description="This is the card description. It can be as long or as short as neeeded. The container will adjust automatically"
+      button1="Action 1"
+      button2="Action 2"
+    />
+  </div>
+  </div>
 </body>
 <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
 <script type="module">

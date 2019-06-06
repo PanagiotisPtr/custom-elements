@@ -2,6 +2,9 @@
 
 Experimenting with custom elements and vanilla JavaScript. Trying to use best practices. This page only contains a simple card.
 
+![material card](https://raw.githubusercontent.com/PanagiotisPtr/custom-elements/master/result.png "Result")
+
+
 Resources:
 1) https://alligator.io/web-components
 

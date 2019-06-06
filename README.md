@@ -4,8 +4,10 @@ Experimenting with custom elements and vanilla JavaScript. Trying to use best pr
 
 ![material card](https://raw.githubusercontent.com/PanagiotisPtr/custom-elements/master/result.png "Result")
 
+### How to run the code
+just `npm install` and then open the `index.html` file on a browser.
 
-Resources:
+### Resources
 1) https://alligator.io/web-components
 
 2) https://developers.google.com/web/fundamentals/web-components/

@@ -1,21 +1,53 @@
-class InfoCard extends HTMLElement {
-  constructor() {
-    super();
-    // Create a shadow root
-    var shadow = this.attachShadow({mode: 'open'});
+(function() {
+  const template = document.createElement('template');
+  template.innerHTML = `
+  <style>
+    :host {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .fancy-text {
+      color: blue;
+      font-size: 4em;
+    }
+  </style>
+  <div>
+    <p description></p>
+  </div>
+  `;
+
+  class InfoCard extends HTMLElement {
+    static get observedAttributes() {
+      return ['description'];
+    }
     
-    var info = document.createElement('span');
-    info.setAttribute('class', 'fancy-text');
-    info.textContent = this.getAttribute('text');
+    constructor() {
+      super();
+      this.attachShadow({mode: 'open'});
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    var style = document.createElement('link');
-    style.setAttribute('rel', 'stylesheet');
-    style.setAttribute('type', 'text/css');
-    style.setAttribute('href', 'Components/InfoCard.css');
+      this.descriptionVal = this.shadowRoot.querySelector('[description]');
+    }
 
-    shadow.appendChild(style);
-    shadow.appendChild(info);
+    connectedCallback() {
+      console.log('mounted!');
+
+      if(!this.hasAttribute('description')) 
+        this.setAttribute('description', '');
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+      this.descriptionVal.textContent = this.description;
+    }
+
+    set description(value) {
+      this.setAttribute('description', value);
+    }
+
+    get description() {
+      return this.getAttribute('description');
+    }
   }
-}
 
-customElements.define('info-card', InfoCard);
+  customElements.define('info-card', InfoCard);
+})();

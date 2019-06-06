@@ -1,0 +1,29 @@
+{
+  "name": "custom-elements",
+  "version": "1.0.0",
+  "description": "Custom elements with html and css",
+  "main": "''",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PanagiotisPtr/custom-elements.git"
+  },
+  "keywords": [
+    "custom",
+    "elements",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Panagiotis Petridis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PanagiotisPtr/custom-elements/issues"
+  },
+  "homepage": "https://github.com/PanagiotisPtr/custom-elements#readme",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10"
+  }
+}

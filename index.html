@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Custom Elements</title>
+  </script>
+</head>
+<body>
+  Hello
+  <info-card text="Example!"></info-card>
+</body>
+<script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+<script type="module">
+  function loadScript(src) {
+    return new Promise(function(resolve, reject) {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  WebComponents.waitFor(() => {
+    return loadScript('Components/InfoCard.js');
+  });
+</script>
+  
+</html>
